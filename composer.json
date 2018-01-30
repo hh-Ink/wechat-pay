@@ -1,0 +1,14 @@
+{
+    "name": "xuzhen/wechat-pay",
+    "description": "wechat pay for composer",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xu Zhen",
+            "email": "154602084@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
