@@ -6,14 +6,14 @@
 
 # 对微信官网支付sdk做了以下几点优化：
 
-  1. 对`WxPayDataBase.php`做了拆分，将每个接口对应的类拆分成了单独的类
-  2. 全部支持命名空间
-  3. 支持多个商户号分别调用
+-  1. 对`WxPayDataBase.php`做了拆分，将每个接口对应的类拆分成了单独的类
+-  2. 全部支持命名空间
+-  3. 支持多个商户号分别调用
   
 # 说明
   
-    1. 为了兼容商户号自定义配置，将 `lib\WxPay.Config.php` 里的配置都使用 `static` 替换 `const` ，`WxPayApi()` 和 `JsApiPay()` 都继承了 `WxPayConfig` ，所以在使用 `WxPayApi()` 和 `JsApiPay()` 时都需要先做配置
-    2. 由于加密 KEY 需要配置，所以在使用 `SetSign()` 、 `MakeSign()` 、 `Handle()` 、 `CheckSign()` 都增加了 `$apiKey` 参数
+-  1. 为了兼容商户号自定义配置，将 `lib\WxPay.Config.php` 里的配置都使用 `static` 替换 `const` ，`WxPayApi()` 和 `JsApiPay()` 都继承了 `WxPayConfig` ，所以在使用 `WxPayApi()` 和 `JsApiPay()` 时都需要先做配置
+-  2. 由于加密 KEY 需要配置，所以在使用 `SetSign()` 、 `MakeSign()` 、 `Handle()` 、 `CheckSign()` 都增加了 `$apiKey` 参数
 
 # 安装
   composer require xuzhen/wechat-pay：dev-master
