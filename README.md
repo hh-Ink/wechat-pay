@@ -25,7 +25,6 @@
 ```php
 use WxPay\apiObj\WxPayOrderQuery;
 use WxPay\WxPayApi;
-use WxPay\WxPayConfig;
 
 $transaction_id = 'transaction_id';
 $input = new WxPayOrderQuery();
