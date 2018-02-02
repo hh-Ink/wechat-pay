@@ -22,6 +22,11 @@ use WxPay\apiObj\WxPayReverse;
  */
 class MicroPay extends WxPayApi
 {
+    
+    public function __construct(Array $config = [] ){
+        return parent::__construct($config);
+    }
+    
 	/**
 	 * 
 	 * 提交刷卡支付，并且确认结果，接口比较慢

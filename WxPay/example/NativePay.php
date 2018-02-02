@@ -11,8 +11,12 @@ use WxPay\WxPayApi;
  */
 class NativePay extends WxPayApi
 {
+    
+    public function __construct(Array $config = [] ){
+        return parent::__construct($config);
+    }
+    
 	/**
-	 * 
 	 * 生成扫描支付URL,模式一
 	 * @param BizPayUrlInput $bizUrlInfo
 	 */

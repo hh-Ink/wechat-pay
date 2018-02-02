@@ -24,7 +24,7 @@ class WxPayNotify extends WxPayNotifyReply
 		if($result == false){
 			$this->SetReturn_code("FAIL");
 			$this->SetReturn_msg($msg);
-			$this->ReplyNotify(false);
+			$this->ReplyNotify(false, $apiKey);
 			return;
 		} else {
 			//该分支在成功回调到NotifyCallBack方法，处理完成之后流程
