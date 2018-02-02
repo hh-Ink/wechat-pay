@@ -16,8 +16,32 @@
 -  由于加密 KEY 需要配置，所以在使用 `SetSign()` 、 `MakeSign()` 、 `Handle()` 、 `CheckSign()` 都增加了 `$apiKey` 参数
 
 # 安装
+```comporser
   composer require xuzhen/wechat-pay：dev-master
+```
 
 # 使用
 
-  
+```php
+use WxPay\apiObj\WxPayOrderQuery;
+use WxPay\WxPayApi;
+use WxPay\WxPayConfig;
+
+$transaction_id = 'transaction_id';
+$input = new WxPayOrderQuery();
+$input->SetTransaction_id($transaction_id);
+
+# 配置方法一
+WxPayApi::$APPID = 'your_app_id';
+WxPayApi::$MCHID = 'your_mch_id';
+WxPayApi::$KEY   = 'your_key';
+print_r(WxPayApi::orderQuery($input));
+
+# 配置方法二
+$configArr = [
+ 'APPID' => 'your_app_id',
+ '$MCHID' => 'your_mch_id',
+ 'KEY'   => 'your_key'
+];
+print_r( (new WxPayApi($configArr)) -> orderQuery($input));
+```
