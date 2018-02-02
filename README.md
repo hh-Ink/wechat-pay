@@ -40,7 +40,7 @@ print_r(WxPayApi::orderQuery($input));
 # 配置方法二
 $configArr = [
  'APPID' => 'your_app_id',
- '$MCHID' => 'your_mch_id',
+ 'MCHID' => 'your_mch_id',
  'KEY'   => 'your_key'
 ];
 print_r( (new WxPayApi($configArr)) -> orderQuery($input));
