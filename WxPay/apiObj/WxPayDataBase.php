@@ -60,11 +60,6 @@ class WxPayDataBase
     	$xml = "<xml>";
     	foreach ($this->values as $key=>$val)
     	{
-    		if (is_numeric($val)){
-    			$xml.="<".$key.">".$val."</".$key.">";
-    		}else{
-    			$xml.="<".$key."><![CDATA[".$val."]]></".$key.">";
-    		}
     		$xml.="<".$key.">".$val."</".$key.">";
         }
         $xml.="</xml>";
@@ -109,8 +104,8 @@ class WxPayDataBase
         //将XML转为array
         //禁止引用外部xml实体
         libxml_disable_entity_loader(true);
-        $this->values = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);		
-		return $this->values;
+        $this->values = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+        return $this->values;
 	}
 	
 	/**

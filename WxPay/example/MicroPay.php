@@ -20,7 +20,7 @@ use WxPay\apiObj\WxPayReverse;
  * @author widy
  *
  */
-class MicroPay
+class MicroPay extends WxPayApi
 {
 	/**
 	 * 
@@ -32,7 +32,7 @@ class MicroPay
 	public function pay($microPayInput)
 	{
 		//①、提交被扫支付
-		$result = WxPayApi::micropay($microPayInput, 5);
+		$result = parent::micropay($microPayInput, 5);
 		//如果返回成功
 		if(!array_key_exists("return_code", $result)
 			|| !array_key_exists("out_trade_no", $result)
@@ -91,7 +91,7 @@ class MicroPay
 	{
 		$queryOrderInput = new WxPayOrderQuery();
 		$queryOrderInput->SetOut_trade_no($out_trade_no);
-		$result = WxPayApi::orderQuery($queryOrderInput);
+		$result = parent::orderQuery($queryOrderInput);
 		
 		if($result["return_code"] == "SUCCESS" 
 			&& $result["result_code"] == "SUCCESS")
@@ -133,7 +133,7 @@ class MicroPay
 		
 		$clostOrder = new WxPayReverse();
 		$clostOrder->SetOut_trade_no($out_trade_no);
-		$result = WxPayApi::reverse($clostOrder);
+		$result = parent::reverse($clostOrder);
 		
 		//接口调用失败
 		if($result["return_code"] != "SUCCESS"){

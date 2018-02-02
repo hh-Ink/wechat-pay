@@ -9,7 +9,7 @@ use WxPay\WxPayApi;
  * @author widyhu
  *
  */
-class NativePay
+class NativePay extends WxPayApi
 {
 	/**
 	 * 
@@ -20,7 +20,7 @@ class NativePay
 	{
 		$biz = new WxPayBizPayUrl();
 		$biz->SetProduct_id($productId);
-		$values = WxPayApi::bizpayurl($biz);
+		$values = parent::bizpayurl($biz);
 		$url = "weixin://wxpay/bizpayurl?" . $this->ToUrlParams($values);
 		return $url;
 	}
@@ -51,7 +51,7 @@ class NativePay
 	{
 		if($input->GetTrade_type() == "NATIVE")
 		{
-			$result = WxPayApi::unifiedOrder($input);
+			$result = parent::unifiedOrder($input);
 			return $result;
 		}
 	}
