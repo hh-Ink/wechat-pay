@@ -13,7 +13,7 @@
 # 说明
   
 -  为了兼容商户号自定义配置，将 `lib\WxPay.Config.php` 里的配置都使用 `static` 替换 `const` ，`WxPayApi()` 和 `JsApiPay()` 都继承了 `WxPayConfig` ，所以在使用 `WxPayApi()` 和 `JsApiPay()` 时都需要先做配置
--  由于加密 KEY 需要配置，所以在使用 `SetSign()` 、 `MakeSign()` 、 `Handle()` 、 `CheckSign()` 都增加了 `$apiKey` 参数
+-  由于加密 KEY 需要配置，所以在使用 `SetSign()` 、 `MakeSign()` 、 `Handle()` 、 `CheckSign()` 、 `WxPayResults::Init()` 都增加了 `$apiKey` 参数
 
 # 安装
 ```comporser
