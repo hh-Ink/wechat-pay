@@ -1,22 +1,20 @@
 {
-    "name": "xuzhen/wechat-pay",
-    "description": "wechat pay for composer ",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Xu Zhen",
-            "email": "154602084@qq.com"
-        }
-    ],
-    "version": "1.0.0",
-    "minimum-stability": "stable",
-    "require": {
-	    "php":">=5.3"
-    },
-    "autoload": {
-        "psr-4": {
-	  "WxPay\\": "WxPay/"
-        }
+  "name": "xuzhen/wechat-pay",
+  "description": "wechat pay for composer ",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Xu Zhen",
+      "email": "154602084@qq.com"
     }
+  ],
+  "require": {
+    "php": ">=5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "WxPay\\": "WxPay/"
+    }
+  }
 }
