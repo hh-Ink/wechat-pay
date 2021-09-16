@@ -23,7 +23,7 @@
 ## 使用
 
 ```php
-use WxPay\apiObj\WxPayOrderQuery;
+use WxPay\ApiObj\WxPayOrderQuery;
 use WxPay\WxPayApi;
 
 $transaction_id = 'transaction_id';
